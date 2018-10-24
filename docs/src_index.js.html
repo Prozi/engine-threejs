@@ -202,13 +202,13 @@ export class Application extends THREE.WebGLRenderer {
     this.addCamera()
     this.addCanvas()
     this.bindEvents()
-    this.startScripts()    
+    this.loop()    
   }
   addEmptyScene() {
     this.currentScene = new Scene()
   }
   addCamera() {
-    this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 10)
+    this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
   }
   addToScene(gameObject) {
     this.currentScene.transform.add(gameObject.transform)
@@ -219,6 +219,8 @@ export class Application extends THREE.WebGLRenderer {
   bindEvents() {
     window.addEventListener('resize', () => {
       setTimeout(() => {
+        this.camera.aspect = window.innerWidth / window.innerHeight
+        this.camera.updateProjectionMatrix()
         this.setSize(window.innerWidth, window.innerHeight)
       })
     })
@@ -229,16 +231,21 @@ export class Application extends THREE.WebGLRenderer {
       })
     })
   }
-  updateScripts() {
+  beforeUpdate() {
     const scripts = this.currentScene.transform.children.filter((child) => child.gameObject)
       .map((child) => child.gameObject)
     scripts.forEach((child) => child.onUpdate())
+  }
+  afterUpdate() {
+    const scripts = this.currentScene.transform.children.filter((child) => child.gameObject)
+      .map((child) => child.gameObject)
     scripts.forEach((child) => child.afterUpdate())
   }
-  startScripts() {
-    this.updateScripts()
+  loop() {
+    requestAnimationFrame(() => this.loop(), 1000 / 60)
+    this.beforeUpdate()
     this.render(this.currentScene.transform, this.camera)
-    setTimeout(() => this.startScripts(), 1000 / 60)
+    this.afterUpdate()
   }
 }
 </code></pre>
