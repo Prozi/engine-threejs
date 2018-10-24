@@ -60,7 +60,9 @@
     "stats-js": "^1.0.0-alpha1",
     "webpack": "^4.23.0",
     "webpack-command": "^0.4.1",
-    "webpack-dev-server": "^3.1.10"
+    "webpack-dev-server": "^3.1.10",
+    "cryptiles": ">=4.1.2",
+    "hoek": ">=4.2.1"
   },
   "peerDependencies": {
     "three": "^0.97.0"

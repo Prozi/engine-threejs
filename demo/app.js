@@ -1,6 +1,5 @@
 'use strict'
 
-import { PerspectiveCamera } from 'three'
 import { Application, Mesh, Scene } from '../src'
 import Stats from 'stats-js'
 
