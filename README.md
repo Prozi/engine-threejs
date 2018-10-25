@@ -21,7 +21,7 @@ or
 
 ## Demo code (it's in the repo)
 
-```
+```javascript
 'use strict'
 
 import { Application, Mesh } from '../src'
