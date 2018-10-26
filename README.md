@@ -88,7 +88,7 @@ And it works fast and smooth
 [https://prozi.github.io/engine-threejs/](https://prozi.github.io/engine-threejs/)
 
 
-## Must Read
+## Must Read (Flow, Philosophy, Concepts)
 
 Read more about *The engine* here:
 
@@ -97,18 +97,13 @@ Read more about *The engine* here:
 
 ## Contents
 
-✅ Mesh
+✅ `Mesh`: `GameObject` with `transform` of `THREE.Mesh`
 
-✅ Scene
+✅ `Scene`: `GameObject` with `transform` of `THREE.Scene`
 
-✅ Application
+✅ `Application`: `THREE.WebGLRenderer` with `currentScene` of `Scene`
 
 ... and more to come!
-
-
-## About
-
-All classes are extended from `GameObject` from *The engine*.
 
 
 ## License
