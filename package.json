@@ -1,6 +1,6 @@
 {
   "name": "@minininja/threejs",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "mini.ninja Game Engine + three.js variant - universal for bootstrapping games in 3d.",
   "main": "src/index.js",
   "scripts": {
@@ -45,7 +45,6 @@
     "jasmine": "^3.3.0",
     "jasmine-core": "^3.3.0",
     "jsdoc-template": "https://github.com/braintree/jsdoc-template.git",
-    "json-stringify-safe": "^5.0.1",
     "karma": "^3.1.1",
     "karma-chrome-launcher": "^2.2.0",
     "karma-coverage": "^1.1.2",
@@ -59,9 +58,7 @@
     "three": "^0.97.0",
     "webpack": "^4.23.1",
     "webpack-command": "^0.4.1",
-    "webpack-dev-server": "^3.1.10",
-    "cryptiles": ">=4.1.2",
-    "hoek": ">=5.0.4"
+    "webpack-dev-server": "^3.1.10"
   },
   "peerDependencies": {
     "three": "^0.97.0"
